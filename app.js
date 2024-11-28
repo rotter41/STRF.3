@@ -74,7 +74,7 @@ async function start()
 
         document.getElementById("pngDiv").appendChild(exImg)
 
-        for (let j = 5; j !=0; j--) {
+        for (let j = 60; j !=0; j--) {
             if (stopValue == true){ await waitForClick(); stopValue = !stopValue; document.getElementById("Timer").style.backgroundColor = "red";}
             document.getElementById("Timer").style.backgroundColor = "white";
 
@@ -90,22 +90,23 @@ async function start()
             document.getElementById("INFO").textContent = "Take a deep breath and relax for a moment before starting the next exercise!"
         }
 
-        for (let j = 5; j !=0; j--) {
-            if (stopValue == true){ await waitForClick(); stopValue = !stopValue; document.getElementById("Timer").style.backgroundColor = "red";
+        for (let j = 20; j !=0; j--) {
+            if (stopValue == true){ await waitForClick(); stopValue = !stopValue; document.getElementById("Timer").style.backgroundColor = "red";}
             document.getElementById("Timer").style.backgroundColor = "white";
             document.getElementById("Timer").textContent = j;
             await sleep(1000)
-        }}
+        }
+    }
 
         lastEx = exPicker
         if(i%2 == 1) exUp = exUp+4
-    }
+    
     console.log("END")
     document.getElementById("TextEx").textContent = "KONEC"
     document.getElementById("Timer").style.display = "none"
     document.getElementById("INFO").style.display = "none"
-    }
-
+    
+}
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
