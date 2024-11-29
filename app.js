@@ -1,4 +1,4 @@
-let exPicker, lastEx = -1, x = 0, exUp = 0, stopValue = false
+let exPicker, x = 0, exUp = 0, stopValue = false
 
 
 async function start()
@@ -25,10 +25,10 @@ async function start()
         { name: "Under Jaw Lift", instruction: "Place your fist under your jaw and gently push upward while resisting with your jaw muscles." },
         { name: "Side Jaw Stretch", instruction: "Place your hand on one side of your jaw and push against it while resisting the movement." }
     ];
+    let lastEx = -1
     document.getElementById("stopBT").addEventListener("click", () =>{
         stopValue = true
     })
-
     for(let i = 0; i <= 9; i++) {
         document.getElementById("pngDiv").style.display = "block"
         console.log("exercise " + (i))
@@ -96,10 +96,9 @@ async function start()
             document.getElementById("Timer").textContent = j;
             await sleep(1000)
         }
-    }
-
-        lastEx = exPicker
         if(i%2 == 1) exUp = exUp+4
+        lastEx = exPicker
+    }
     
     console.log("END")
     document.getElementById("TextEx").textContent = "KONEC"
